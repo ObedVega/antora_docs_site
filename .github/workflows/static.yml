@@ -6,10 +6,11 @@ on:
   push:
     branches: ["main"]
   pull_request:
-    types: [opened, synchronize]
-
+    types:
+      - opened
+      - synchronize
   # Allows you to run this workflow manually from the Actions tab
-#  workflow_dispatch:
+  workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -46,5 +47,5 @@ jobs:
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1.4.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TOKEN_ACCESO_GITHUB }}
           base_branch: main
