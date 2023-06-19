@@ -9,6 +9,7 @@ on:
     types:
       - opened
       - synchronize
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -47,5 +48,5 @@ jobs:
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1.4.4
         with:
-          github_token: ${{ secrets.TOKEN_ACCESO_GITHUB }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           base_branch: main
