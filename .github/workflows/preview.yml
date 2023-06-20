@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Deploy PR Preview
-        uses: rossjrw/pr-preview-action@v1.4.4
+        uses: rossjrw/pr-preview-action@v1.4.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           preview-branch: gh-pages
