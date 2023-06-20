@@ -1,9 +1,10 @@
 # .github/workflows/deploy.yml
 name: Deploy PR previews
+concurrency: preview-${{ github.ref }}
 on:
-#  push:
-#    branches:
-#      - main
+  push:
+    branches:
+      - main
   pull_request:
     types:
       - opened
