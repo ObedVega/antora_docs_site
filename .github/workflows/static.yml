@@ -8,8 +8,10 @@ on:
   pull_request:
     branches: ["main"]
     types:
-     - opened
-     - synchronize
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -48,6 +50,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           base_branch: main          
+          folder: .
+          branch: gh-pages
+          clean-exclude: pr-preview
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
