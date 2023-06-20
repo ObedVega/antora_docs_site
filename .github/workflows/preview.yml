@@ -1,13 +1,15 @@
 # .github/workflows/deploy.yml
 name: Deploy PR previews
 on:
-  push:
-    branches:
-      - main
+#  push:
+#    branches:
+#      - main
   pull_request:
     types:
       - opened
-      - synchronize    
+      - reopened
+      - synchronize
+      - closed  
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 #permissions:
 #    contents: read
