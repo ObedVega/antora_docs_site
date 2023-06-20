@@ -47,7 +47,7 @@ jobs:
         uses: rossjrw/pr-preview-action@v1.4.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          preview-branch: main
+          preview-branch: gh-pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
