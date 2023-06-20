@@ -31,7 +31,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://ObedVega.github.io/test_pr_preview
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -49,6 +49,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           preview-branch: gh-pages
           umbrella-dir: pr-preview
+          action: auto
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
