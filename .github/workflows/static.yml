@@ -20,7 +20,7 @@ jobs:
     #  - run: npm i && npm run build
       - uses: rossjrw/pr-preview-action@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        #  token: ${{ secrets.GITHUB_TOKEN }}
           source-dir: .
           preview-branch: gh-pages
           umbrella-dir: pr-preview
