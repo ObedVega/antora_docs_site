@@ -9,22 +9,22 @@ on:
       - opened
       - synchronize    
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-    contents: read
-    pages: write
-    id-token: write
-    issues: write
+#permissions:
+#    contents: read
+#    pages: write
+#    id-token: write
+#    issues: write
 jobs:
   deploy-preview:
     environment:
         name: github-pages
-        url: https://obedvega.github.io/test_pr_preview/
+#        url: https://obedvega.github.io/test_pr_preview/
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 #      - run: npm i && npm run build
       - name: Deploy PR Preview
-        id: deployment-p
+#        id: deployment-p
         uses: rossjrw/pr-preview-action@v1.4.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
