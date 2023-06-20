@@ -12,11 +12,7 @@ on:
       - synchronize
       - closed  
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-#permissions:
-#    contents: read
-#    pages: write
-#    id-token: write
-#    issues: write
+
 jobs:
   deploy-preview:
     environment:
@@ -30,7 +26,6 @@ jobs:
 #        id: deployment-p
         uses: rossjrw/pr-preview-action@v1.4.4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           source-dir: .
           preview-branch: gh-pages
           umbrella-dir: pr-preview
