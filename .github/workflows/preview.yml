@@ -1,6 +1,5 @@
 # .github/workflows/deploy.yml
 name: Deploy PR previews
-concurrency: preview-${{ github.ref }}
 on:
   push:
     branches:
@@ -8,25 +7,17 @@ on:
   pull_request:
     types:
       - opened
-      - reopened
-      - synchronize
-      - closed  
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-
+      - synchronize    
 jobs:
   deploy-preview:
-    environment:
-        name: github-pages
-#        url: https://obedvega.github.io/test_pr_preview/
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-#      - run: npm i && npm run build
       - name: Deploy PR Preview
-#        id: deployment-p
         uses: rossjrw/pr-preview-action@v1.4.4
         with:
-          source-dir: ./build/
+          token: ${{ secrets.GITHUB_TOKEN }}
+          source-dir: .
           preview-branch: gh-pages
           umbrella-dir: pr-preview
           action: auto
