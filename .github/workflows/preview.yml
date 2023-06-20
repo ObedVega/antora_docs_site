@@ -18,7 +18,7 @@ jobs:
   deploy-preview:
     environment:
         name: github-pages
-        url: ${{ steps.deployment-p.outputs.page_url }}
+        url: https://obedvega.github.io/test_pr_preview/
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
