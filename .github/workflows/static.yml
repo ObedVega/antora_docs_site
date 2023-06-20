@@ -42,11 +42,11 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@v1.4.4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           base_branch: main
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
