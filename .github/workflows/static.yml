@@ -47,7 +47,7 @@ jobs:
           # Upload entire repository
           path: './'
       - name: Deploy PR Preview
-        uses: rossjrw/pr-preview-action@v1.4.4
+        uses: rossjrw/pr-preview-action@v1.4.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           base_branch: main          
