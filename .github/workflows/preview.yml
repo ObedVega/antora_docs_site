@@ -3,7 +3,7 @@ name: Deploy PR previews
 on:
   push:
     branches:
-      - gh-pages
+      - main
   pull_request:
     types:
       - opened
@@ -17,7 +17,7 @@ jobs:
         uses: rossjrw/pr-preview-action@v1.4.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          preview-branch: gh-pages
+          preview-branch: main
           source-dir: .
           umbrella-dir: pr-preview
           action: auto
